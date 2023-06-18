@@ -1,113 +1,135 @@
-import Image from 'next/image'
+import Image from "next/image";
+import ProjectList from "@/components/ProjectList";
 
 export default function Home() {
+  // The Mobile App Page
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.js</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
+    <section className="p-[4.3%]">
+      <section className="flex_row items-center justify-between mb-11">
+        <div className="flex_row gap-4">
+          <h1 className="text-[46px] text-[#0D062D] font-semibold">
+            Mobile App
+          </h1>
+          <div className="flex_row gap-2">
             <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+              src="/icons/arrow-square-up.svg"
+              width={30}
+              height={30}
+              alt="edit icon"
+            ></Image>
+            <Image
+              src="/icons/link.svg"
+              width={30}
+              height={30}
+              alt="link icon"
+            ></Image>
+          </div>
         </div>
-      </div>
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+        <div className="flex_row items-center gap-3">
+          <div className="flex_row gap-2">
+            <Image
+              src="/icons/add-square-2.svg"
+              width={18}
+              height={18}
+              alt="add icon"
+            ></Image>
+            <p>Invite</p>
+          </div>
+          <div className="flex_row">
+            <Image
+              src="/images/team-member-1.png"
+              width={38}
+              height={38}
+              alt="team member 1"
+            ></Image>
+            <Image
+              src="/images/team-member-2.png"
+              width={38}
+              height={38}
+              alt="team member 2"
+              className="ml-[-6px]"
+            ></Image>
+            <Image
+              src="/images/team-member-3.png"
+              width={38}
+              height={38}
+              alt="team member 3"
+              className="ml-[-6px]"
+            ></Image>
+            <Image
+              src="/images/team-member-4.png"
+              width={38}
+              height={38}
+              alt="team member 4"
+              className="ml-[-6px]"
+            ></Image>
+            <div className="w-[38px] h-[38px] flex_row items-center justify-center ml-[-6px] bg-[#F4D7DA] border-[1.5px] border-white rounded-full text-[#D25B68] text-[15px] font-medium">
+              +2
+            </div>
+          </div>
+        </div>
+      </section>
 
-      <div className="mb-32 grid text-center lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+      <section className="flex_row items-center justify-between mb-10">
+        <div className="flex_row gap-3 text-[#787486]">
+          <div className="flex_row items-center justify-evenly w-[122px] h-[40px] rounded-[6px] border-[1px] border-[#787486]">
+            <Image
+              src="/icons/filter.svg"
+              width={16}
+              height={16}
+              alt="filter"
+            ></Image>
+            <p>Filter</p>
+            <Image
+              src="/icons/arrow-down.svg"
+              width={16}
+              height={16}
+              alt="arrow down"
+              color="#787486"
+            ></Image>
+          </div>
+          <div className="flex_row items-center justify-evenly w-[122px] h-[40px] rounded-[6px] border-[1px] border-[#787486]">
+            <Image
+              src="/icons/calendar.svg"
+              width={16}
+              height={16}
+              alt="calendar"
+            ></Image>
+            <p>Today</p>
+            <Image
+              src="/icons/arrow-down.svg"
+              width={16}
+              height={16}
+              alt="arrow down"
+              color="#787486"
+            ></Image>
+          </div>
+        </div>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
+        <div className="flex_row items-center gap-5">
+          <div className="flex_row items-center justify-evenly w-[97px] h-[40px] rounded-[6px] border-[1px] border-[#787486]">
+            <Image
+              src="/icons/profile-2users.svg"
+              width={16}
+              height={16}
+              alt="calendar"
+            ></Image>
+            <p>Share</p>
+          </div>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore the Next.js 13 playground.
-          </p>
-        </a>
+          <div className="border-[1px] h-[28px] bg-[#787486]" />
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+          <Image src="/icons/list.svg" width={40} height={40}></Image>
+          <Image src="/icons/grid.svg" width={21} height={21}></Image>
+        </div>
+      </section>
+
+      <section className="flex_row gap-4">
+        <ProjectList name="To Do" />
+        <ProjectList name="On Progress" />
+        <ProjectList name="Done" />
+      </section>
+    </section>
+  );
 }

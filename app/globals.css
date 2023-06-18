@@ -8,20 +8,40 @@
   --background-end-rgb: 255, 255, 255;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
   }
-}
+} */
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.flex_row {
+  @apply flex flex-row;
+}
+.flex_col {
+  @apply flex flex-col;
+}
+
+.active_project {
+  background: rgba(80, 48, 229, 0.08);
+}
+
+.tag_bg_not_done {
+  background: rgba(223, 168, 116, 0.2);
+}
+
+.tag_bg_done {
+  background: rgba(131, 194, 157, 0.2);
+}
+
+.lamp_icon_bg {
+  background: rgba(251, 203, 24, 0.3);
+  filter: blur(12px);
 }
