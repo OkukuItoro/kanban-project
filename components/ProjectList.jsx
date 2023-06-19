@@ -2,9 +2,10 @@ import { todos, onProgress, done } from "@/constants";
 import ListCard from "./ListCard";
 
 const ProjectList = ({ name }) => {
+  // w-[354px]
   return (
     // PROJECT'S STAGE FOR ("TO DO", "ON PROGRESS", "DONE") @ FIGMA DESIGN
-    <section className="bg-[#F5F5F5] w-[354px] flex_col rounded-[16px] p-5 h-[fit-content]">
+    <section className="bg-[#F5F5F5] w-[100%] lg:w-[32%] flex_col rounded-[16px] mb-12 lg:m-0 p-5 h-[fit-content]">
       {/* Container for Project's Stage Theme, Title and No. of items */}
       <section className="flex_row items-center gap-2 mb-5">
         {/* Theme */}
@@ -23,7 +24,7 @@ const ProjectList = ({ name }) => {
 
         {/* Number of items in each stage list */}
         <div
-          className={`bg-[#E0E0E0] text-[#625F6D] h-[20px] w-[20px] flex_row items-center justify-center rounded-full`}
+          className={`bg-[#E0E0E0] text-[#625F6D] text-[12px] h-[20px] w-[20px] flex_row items-center justify-center rounded-full`}
         >
           {name === "To Do" && todos.length}
           {name === "On Progress" && onProgress.length}

@@ -1,12 +1,58 @@
+"use client";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import { sideBarLinks } from "@/constants";
 import { projects } from "@/constants";
 import Link from "next/link";
 
-const SideBar = () => {
+const SideBar = ({ sideBarState, handleSideBarState }) => {
+  const [viewportWidth, setViewportWidth] = useState(0);
+
+  const handleChange = () => {
+    const newState = false;
+    handleSideBarState(newState);
+  };
+
+  function handleResize() {
+    setViewportWidth(window.innerWidth);
+  }
+
+  useEffect(() => {
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
     // SIDEBAR COMPONENT LAYOUT
-    <section className="w-[17.4%] min-h-screen border-r-[1px] border-r-[#DBDBDB]">
+    <section
+      className={`${
+        viewportWidth < 1024 ? (sideBarState ? "" : "hidden") : ""
+      }  fixed pl-7 lg:pl-0 top-0 z-40 bg-[#ffff] w-[50%] lg:w-[17.4%] min-h-screen border-r-[1px] border-r-[#DBDBDB]`}
+    >
+      <div className="h-[88px] px-5 flex_row justify-between border-b-[1px] border-b-[#DBDBDB]">
+        <div className="flex_row items-center">
+          <Image
+            src="/icons/logo.svg"
+            width={24}
+            height={24}
+            alt="logo"
+          ></Image>
+          <h1 className="text-[20px] font-semibold ml-3">Project M.</h1>
+        </div>
+        <Image
+          src="/icons/arrow-right.svg"
+          width={20}
+          height={20}
+          alt="arrow"
+          className="cursor-pointer"
+          onClick={handleChange}
+        ></Image>
+      </div>
+
       {/* Links:  Home, messages, tasks, members, settings */}
       <div className="p-5 text-[#787486]">
         {sideBarLinks.map(({ name, icon }) => (

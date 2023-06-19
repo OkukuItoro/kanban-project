@@ -44,7 +44,7 @@ const ListCard = ({
                   src={`/images/${img}.png`}
                   width={281.68}
                   height={110}
-                  className="rounded-[8px]"
+                  className="rounded-[8px] w-[100%]"
                   alt="project image"
                 ></Image>
               );
