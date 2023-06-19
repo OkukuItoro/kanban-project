@@ -123,12 +123,14 @@ export default function Home() {
             src="/icons/list.svg"
             width={40}
             height={40}
+            alt="list icon"
           ></Image>
           <Image
             className="hidden lg:block"
             src="/icons/grid.svg"
             width={21}
             height={21}
+            alt="grid icon"
           ></Image>
         </div>
       </section>

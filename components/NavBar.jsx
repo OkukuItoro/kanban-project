@@ -49,7 +49,12 @@ const NavBar = ({ sideBarState, handleSideBarState }) => {
 
         {/* Search Input */}
         <form className="flex_row items-center rounded-[6px] bg-[#F5F5F5] h-[44px] w-[55%] lg:w-[417px] p-4">
-          <Image src="/icons/search-normal.svg" width={22} height={22}></Image>
+          <Image
+            src="/icons/search-normal.svg"
+            width={22}
+            height={22}
+            alt="search icon"
+          ></Image>
           <input
             className="ml-3 w-[90%] bg-inherit p-2 outline-none"
             type="text"
@@ -64,21 +69,21 @@ const NavBar = ({ sideBarState, handleSideBarState }) => {
             <div className="hidden lg:flex_row m-0 lg:mr-12 gap-4">
               <Image
                 src="/icons/calendar-2.svg"
-                alt="calendar icon"
                 width={24}
                 height={24}
+                alt="calendar icon"
               ></Image>
               <Image
                 src="/icons/message-question.svg"
-                alt="message-question icon"
                 width={24}
                 height={24}
+                alt="message-question icon"
               ></Image>
               <Image
                 src="/icons/notification.svg"
-                alt="notification icon"
                 width={24}
                 height={24}
+                alt="notification icon"
               ></Image>
             </div>
 
@@ -93,6 +98,7 @@ const NavBar = ({ sideBarState, handleSideBarState }) => {
                   src="/icons/arrow-down.svg"
                   width={18}
                   height={18}
+                  alt="arrow down icon"
                 ></Image>
               </div>
             </div>

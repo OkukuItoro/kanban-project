@@ -57,7 +57,7 @@ const SideBar = ({ sideBarState, handleSideBarState }) => {
       <div className="p-5 text-[#787486]">
         {sideBarLinks.map(({ name, icon }) => (
           <div className="flex_row items-center mb-5 cursor-pointer last-of-type:m-0">
-            <Image src={icon} width={24} height={24} alt={icon}></Image>
+            <Image src={icon} width={24} height={24} alt={name}></Image>
             <p className="ml-3 text-[16px]">{name}</p>
           </div>
         ))}
@@ -131,7 +131,12 @@ const SideBar = ({ sideBarState, handleSideBarState }) => {
         <div className="flex_col items-center justify-center w-[100%] bg-[#F5F5F5] h-[200px] px-4 mt-12 mb-9 rounded-[24px] text-center relative">
           {/* Icon */}
           <div className="absolute top-[-16%] left-[33%] flex_row items-center justify-center bg-[#F5F5F5] h-[66px] w-[66px] rounded-full">
-            <Image src="/icons/lamp-on.svg" width={24} height={24}></Image>
+            <Image
+              src="/icons/lamp-on.svg"
+              width={24}
+              height={24}
+              alt="lamp-on icon"
+            ></Image>
             <div className="lamp_icon_bg absolute w-[45px] h-[45px] rounded-full" />
           </div>
 

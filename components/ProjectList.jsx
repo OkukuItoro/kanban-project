@@ -46,17 +46,21 @@ const ProjectList = ({ name }) => {
       {/* Todo Items */}
       {name == "To Do" &&
         todos.map(
-          ({
-            urgency,
-            isComplete,
-            title,
-            desc,
-            imgs,
-            collaborators,
-            comments,
-            files,
-          }) => (
+          (
+            {
+              urgency,
+              isComplete,
+              title,
+              desc,
+              imgs,
+              collaborators,
+              comments,
+              files,
+            },
+            i
+          ) => (
             <ListCard
+              key={i}
               urgency={urgency}
               isComplete={isComplete}
               title={title}
@@ -72,17 +76,21 @@ const ProjectList = ({ name }) => {
       {/* On Progress Items */}
       {name == "On Progress" &&
         onProgress.map(
-          ({
-            urgency,
-            isComplete,
-            title,
-            desc,
-            imgs,
-            collaborators,
-            comments,
-            files,
-          }) => (
+          (
+            {
+              urgency,
+              isComplete,
+              title,
+              desc,
+              imgs,
+              collaborators,
+              comments,
+              files,
+            },
+            i
+          ) => (
             <ListCard
+              key={i}
               urgency={urgency}
               isComplete={isComplete}
               title={title}
@@ -98,17 +106,21 @@ const ProjectList = ({ name }) => {
       {/* Done Items */}
       {name == "Done" &&
         done.map(
-          ({
-            urgency,
-            isComplete,
-            title,
-            desc,
-            imgs,
-            collaborators,
-            comments,
-            files,
-          }) => (
+          (
+            {
+              urgency,
+              isComplete,
+              title,
+              desc,
+              imgs,
+              collaborators,
+              comments,
+              files,
+            },
+            i
+          ) => (
             <ListCard
+              key={i}
               urgency={urgency}
               isComplete={isComplete}
               title={title}

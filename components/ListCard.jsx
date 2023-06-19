@@ -27,7 +27,12 @@ const ListCard = ({
         )}
 
         {/* Options Icon */}
-        <Image src="/icons/three-dots.svg" width={16} height={16}></Image>
+        <Image
+          src="/icons/three-dots.svg"
+          width={16}
+          height={16}
+          alt="three dotd icon"
+        ></Image>
       </div>
 
       {/* Project Title */}
@@ -37,10 +42,11 @@ const ListCard = ({
       {/* Project Images */}
       {imgs && (
         <div className="flex_row w-[100%] mb-5">
-          {imgs?.map((img) => {
+          {imgs?.map((img, i) => {
             if (img === "onboarding")
               return (
                 <Image
+                  key={i}
                   src={`/images/${img}.png`}
                   width={281.68}
                   height={110}
@@ -52,6 +58,7 @@ const ListCard = ({
             if (img === "mobile-app-design")
               return (
                 <Image
+                  key={i}
                   src={`/images/${img}.png`}
                   width={274}
                   height={180}
@@ -63,6 +70,7 @@ const ListCard = ({
             if ((img === "mood-board-1", "mood-board-2"))
               return (
                 <Image
+                  key={i}
                   src={`/images/${img}.png`}
                   width={111}
                   height={59}
@@ -93,13 +101,23 @@ const ListCard = ({
         {/* Comments and Files */}
         <div className="flex_row gap-3">
           <div className="flex_row gap-[2.5px]">
-            <Image src="/icons/message.svg" width={16} height={16}></Image>
+            <Image
+              src="/icons/message.svg"
+              width={16}
+              height={16}
+              alt="message icon"
+            ></Image>
             <p className="text-[10px] font-medium text-[#787486]">
               {comments} Comments
             </p>
           </div>
           <div className="flex_row gap-[2.5px]">
-            <Image src="/icons/folder.svg" width={16} height={16}></Image>
+            <Image
+              src="/icons/folder.svg"
+              width={16}
+              height={16}
+              alt="folder icon"
+            ></Image>
             <p className="text-[10px] font-medium text-[#787486]">
               {files} files
             </p>
