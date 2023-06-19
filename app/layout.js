@@ -8,10 +8,10 @@ import { useState } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export const metadata = {
-  title: "Kanban Project",
-  description: "Manage todos and collaborative projects",
-};
+// export const metadata = {
+//   title: "Kanban Project",
+//   description: "Manage todos and collaborative projects",
+// };
 
 export default function RootLayout({ children }) {
   const [sideBarState, setSideBarState] = useState(false);
