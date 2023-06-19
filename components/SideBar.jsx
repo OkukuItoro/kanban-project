@@ -55,8 +55,11 @@ const SideBar = ({ sideBarState, handleSideBarState }) => {
 
       {/* Links:  Home, messages, tasks, members, settings */}
       <div className="p-5 text-[#787486]">
-        {sideBarLinks.map(({ name, icon }) => (
-          <div className="flex_row items-center mb-5 cursor-pointer last-of-type:m-0">
+        {sideBarLinks.map(({ name, icon }, i) => (
+          <div
+            key={i}
+            className="flex_row items-center mb-5 cursor-pointer last-of-type:m-0"
+          >
             <Image src={icon} width={24} height={24} alt={name}></Image>
             <p className="ml-3 text-[16px]">{name}</p>
           </div>
@@ -81,9 +84,9 @@ const SideBar = ({ sideBarState, handleSideBarState }) => {
 
       {/* Projects Content */}
       <div className="p-2">
-        {projects.map((project) => (
+        {projects.map((project, i) => (
           // Project Link
-          <Link href="/">
+          <Link href="/" key={i}>
             {/* Project bg */}
             <div
               className={`flex_row items-center justify-between rounded-[6px] w-[100%] h-[39px] p-3 cursor-pointer ${
