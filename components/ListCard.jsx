@@ -1,22 +1,15 @@
 import Image from "next/image";
 
-const ListCard = ({
-  urgency,
-  isComplete,
-  title,
-  desc,
-  imgs,
-  collaborators,
-  comments,
-  files,
-}) => {
+const ListCard = ({ todo }) => {
+  const { urgency, status, title, desc, imgs, collaborators, comments, files } =
+    todo;
   return (
     // CARD COMPONENT
     <article className="bg-white p-4 mt-6 rounded-[16px]">
       {/* Container for Urgency/Status Tag and Options Icon */}
       <div className="flex_row justify-between">
         {/* Urgency/Status Tag */}
-        {isComplete == true ? (
+        {status == "Done" ? (
           <div className="tag_bg_done text-[#68B266] text-[12px] px-2 rounded-[4px]">
             Completed
           </div>
@@ -86,7 +79,7 @@ const ListCard = ({
       <div className="flex_row items-center justify-between ml-2">
         {/* Collaborators */}
         <div className="flex_row">
-          {collaborators.map((member, i) => (
+          {collaborators?.map((member, i) => (
             <Image
               key={i}
               src={member}

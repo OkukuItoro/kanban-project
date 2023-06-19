@@ -15,8 +15,9 @@ export const projects = [
 
 export const todos = [
   {
+    id: "954ee3626-fe",
     urgency: "Low",
-    isComplete: false,
+    status: "To Do",
     title: "Brainstorming",
     desc: "Brainstorming brings team members' diverse experience into play.",
     collaborators: [
@@ -28,8 +29,9 @@ export const todos = [
     files: 0,
   },
   {
+    id: "4553adh43-ea",
     urgency: "High",
-    isComplete: false,
+    status: "To Do",
     title: "Research",
     desc: "User research helps you to create an optimal product for users.",
     collaborators: ["/images/team-member-1.png", "/images/team-member-4.png"],
@@ -37,8 +39,9 @@ export const todos = [
     files: 3,
   },
   {
+    id: "544easd4u-tf",
     urgency: "High",
-    isComplete: false,
+    status: "To Do",
     title: "Wireframes",
     desc: "Low fidelity wireframes include the most basic content and visuals.",
     collaborators: [
@@ -50,20 +53,19 @@ export const todos = [
     files: 5,
   },
   {
+    id: "6257dgsd-if",
     urgency: "High",
-    isComplete: false,
+    status: "To Do",
     title: "Wireframes",
     desc: "Low fidelity wireframes include the most basic content and visuals.",
     collaborators: ["/images/team-member-1.png", "/images/team-member-3.png"],
     comments: 7,
     files: 2,
   },
-];
-
-export const onProgress = [
   {
+    id: "4537oggsf-00",
     urgency: "Low",
-    isComplete: false,
+    status: "On Progress",
     title: "Onboarding Illustrations",
     imgs: ["onboarding"],
     collaborators: ["/images/team-member-1.png", "/images/team-member-3.png"],
@@ -71,20 +73,19 @@ export const onProgress = [
     files: 15,
   },
   {
+    id: "0367offd-09",
     urgency: "Low",
-    isComplete: false,
+    status: "On Progress",
     title: "Moodboard",
     imgs: ["mood-board-1", "mood-board-2"],
     collaborators: ["/images/team-member-1.png", "/images/team-member-3.png"],
     comments: 9,
     files: 10,
   },
-];
-
-export const done = [
   {
+    id: "11970hfd-pl",
     urgency: "Low",
-    isComplete: true,
+    status: "Done",
     title: "Mobile App Design",
     imgs: ["mobile-app-design"],
     collaborators: ["/images/team-member-1.png", "/images/team-member-3.png"],
@@ -92,8 +93,9 @@ export const done = [
     files: 15,
   },
   {
+    id: "0098rdwq-q2",
     urgency: "High",
-    isComplete: true,
+    status: "Done",
     title: "Design System",
     desc: "It just needs to adapt the UI from what you did before.",
     collaborators: ["/images/team-member-1.png", "/images/team-member-3.png"],

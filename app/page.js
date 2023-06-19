@@ -1,12 +1,17 @@
+"use client";
+
 import Image from "next/image";
 import ProjectList from "@/components/ProjectList";
+import { useState } from "react";
+import { todos } from "@/constants";
 
 export default function Home() {
+  const [data, setData] = useState(todos);
   // The Mobile App Page
   return (
     <section className="py-[6%] px-[45px] lg:p-[4.3%]">
-      <section className="flex_col lg:flex_row items-center lg:justify-between mb-11">
-        <div className="flex_row w-[100%] gap-4 mb-4 lg:m-0">
+      <section className="flex_row lg:w-[100%] flex-wrap items-center lg:justify-between mb-11">
+        <div className="flex_row gap-4 mb-4 lg:m-0">
           <h1 className="text-[30px] lg:text-[46px] text-[#0D062D] font-semibold">
             Mobile App
           </h1>
@@ -26,7 +31,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="flex_row items-center gap-3">
+        <div className="flex_row w-[100%] lg:w-[auto] items-center gap-3">
           <div className="flex_row gap-2">
             <Image
               src="/icons/add-square-2.svg"
@@ -36,7 +41,7 @@ export default function Home() {
             ></Image>
             <p>Invite</p>
           </div>
-          <div className="flex_row">
+          <div className="flex_row ml-auto lg:ml-0">
             <Image
               src="/images/team-member-1.png"
               width={38}
@@ -136,9 +141,9 @@ export default function Home() {
       </section>
 
       <section className="flex_row flex-wrap gap-4">
-        <ProjectList name="To Do" />
-        <ProjectList name="On Progress" />
-        <ProjectList name="Done" />
+        <ProjectList name="To Do" data={data} />
+        <ProjectList name="On Progress" data={data} />
+        <ProjectList name="Done" data={data} />
       </section>
     </section>
   );

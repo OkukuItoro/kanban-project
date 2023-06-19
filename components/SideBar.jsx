@@ -41,7 +41,9 @@ const SideBar = ({ sideBarState, handleSideBarState }) => {
             height={24}
             alt="logo"
           ></Image>
-          <h1 className="text-[20px] font-semibold ml-3">Project M.</h1>
+          <h1 className="text-[16px] lg:text-[20px] font-semibold ml-3">
+            Project M.
+          </h1>
         </div>
         <Image
           src="/icons/arrow-right.svg"

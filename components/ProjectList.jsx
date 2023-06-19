@@ -1,7 +1,11 @@
-import { todos, onProgress, done } from "@/constants";
 import ListCard from "./ListCard";
 
-const ProjectList = ({ name }) => {
+const ProjectList = ({ name, data }) => {
+  const list = data.filter((todo) => todo.status == name);
+
+  const handleDragStart = (event) => {
+    event.dataTransfer.setData("text/plain", data);
+  };
   // w-[354px]
   return (
     // PROJECT'S STAGE FOR ("TO DO", "ON PROGRESS", "DONE") @ FIGMA DESIGN
@@ -26,112 +30,29 @@ const ProjectList = ({ name }) => {
         <div
           className={`bg-[#E0E0E0] text-[#625F6D] text-[12px] h-[20px] w-[20px] flex_row items-center justify-center rounded-full`}
         >
-          {name === "To Do" && todos.length}
-          {name === "On Progress" && onProgress.length}
-          {name === "Done" && done.length}
+          {list.length}
         </div>
       </section>
 
       {/* The Border */}
-      {name == "To Do" && (
-        <div className="rounded-lg border-[3px] border-[#5030e5]" />
-      )}
+      {name == "To Do" && <div className="rounded-lg h-[3px] bg-[#5030e5]" />}
       {name == "On Progress" && (
-        <div className="rounded-lg border-[3px] border-[#FFA500]" />
+        <div className="rounded-lg h-[3px] bg-[#FFA500]" />
       )}
-      {name == "Done" && (
-        <div className="rounded-lg border-[3px] border-[#8BC48A]" />
-      )}
+      {name == "Done" && <div className="rounded-lg h-[3px] bg-[#8BC48A]" />}
 
       {/* Todo Items */}
-      {name == "To Do" &&
-        todos.map(
-          (
-            {
-              urgency,
-              isComplete,
-              title,
-              desc,
-              imgs,
-              collaborators,
-              comments,
-              files,
-            },
-            i
-          ) => (
+      {data.map((todo, i) => {
+        if (todo.status === name)
+          return (
             <ListCard
-              key={i}
-              urgency={urgency}
-              isComplete={isComplete}
-              title={title}
-              desc={desc}
-              imgs={imgs}
-              collaborators={collaborators}
-              comments={comments}
-              files={files}
+              draggable
+              onDragStart={handleDragStart}
+              todo={todo}
+              key={todo.id}
             />
-          )
-        )}
-
-      {/* On Progress Items */}
-      {name == "On Progress" &&
-        onProgress.map(
-          (
-            {
-              urgency,
-              isComplete,
-              title,
-              desc,
-              imgs,
-              collaborators,
-              comments,
-              files,
-            },
-            i
-          ) => (
-            <ListCard
-              key={i}
-              urgency={urgency}
-              isComplete={isComplete}
-              title={title}
-              desc={desc}
-              imgs={imgs}
-              collaborators={collaborators}
-              comments={comments}
-              files={files}
-            />
-          )
-        )}
-
-      {/* Done Items */}
-      {name == "Done" &&
-        done.map(
-          (
-            {
-              urgency,
-              isComplete,
-              title,
-              desc,
-              imgs,
-              collaborators,
-              comments,
-              files,
-            },
-            i
-          ) => (
-            <ListCard
-              key={i}
-              urgency={urgency}
-              isComplete={isComplete}
-              title={title}
-              desc={desc}
-              imgs={imgs}
-              collaborators={collaborators}
-              comments={comments}
-              files={files}
-            />
-          )
-        )}
+          );
+      })}
     </section>
   );
 };
