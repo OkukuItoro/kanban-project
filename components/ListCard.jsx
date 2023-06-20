@@ -1,11 +1,15 @@
 import Image from "next/image";
 
-const ListCard = ({ task }) => {
+const ListCard = ({ task, draggableSnapshot }) => {
   const { urgency, status, title, desc, imgs, collaborators, comments, files } =
     task;
   return (
     // CARD COMPONENT
-    <article className="bg-white p-4 mt-6 rounded-[16px]">
+    <article
+      className={`${
+        draggableSnapshot.isDragging ? "border-[1px] border-[787486]" : ""
+      } bg-white p-4 mt-6 rounded-[16px]`}
+    >
       {/* Container for Urgency/Status Tag and Options Icon */}
       <div className="flex_row justify-between">
         {/* Urgency/Status Tag */}

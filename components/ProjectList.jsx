@@ -59,7 +59,7 @@ const ProjectList = ({ stage, tasks }) => {
                   {...draggableProvided.draggableProps}
                   {...draggableProvided.dragHandleProps}
                 >
-                  <ListCard task={task} />
+                  <ListCard task={task} draggableSnapshot={draggableSnapshot} />
                 </div>
               )}
             </Draggable>

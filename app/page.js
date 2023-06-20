@@ -51,7 +51,7 @@ export default function Home() {
 
       const newDataState = {
         ...data,
-        columns: {
+        stages: {
           ...data.stages,
           [newList.id]: newList,
         },
@@ -61,6 +61,29 @@ export default function Home() {
     }
 
     // user moves from one stage list to another
+    const startTaskIds = Array.from(sourceStageList.taskIds);
+    const [removed] = startTaskIds.splice(source.index, 1);
+    const newStartStage = {
+      ...sourceStageList,
+      taskIds: startTaskIds,
+    };
+    const endTaskIds = Array.from(destinationStageList.taskIds);
+    endTaskIds.splice(destination.index, 0, removed);
+    const newEndStageList = {
+      ...destinationStageList,
+      taskIds: endTaskIds,
+    };
+
+    const newDataState = {
+      ...data,
+      stages: {
+        ...data.stages,
+        [newStartStage.id]: newStartStage,
+        [newEndStageList]: newEndStageList,
+      },
+    };
+
+    setData(newDataState);
   };
 
   // The Mobile App Page
