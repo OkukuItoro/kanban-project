@@ -66,7 +66,7 @@ const NavBar = ({ sideBarState, handleSideBarState }) => {
         <div>
           {/* Calendar, message, and notification Icons */}
           <div className="flex_row items-center">
-            <div className="hidden lg:flex_row m-0 lg:mr-12 gap-4">
+            <div className="hidden lg:flex lg:flex-row m-0 lg:mr-12 gap-4">
               <Image
                 src="/icons/calendar-2.svg"
                 width={24}
