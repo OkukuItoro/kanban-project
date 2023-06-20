@@ -166,7 +166,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="flex_row items-center gap-5">
+        <div className="flex flex-col lg:flex lg:flex-row items-center gap-5">
           <div className="flex_row items-center justify-evenly w-[97px] h-[40px] rounded-[6px] border-[1px] border-[#787486] text-[#787486]">
             <Image
               src="/icons/profile-2users.svg"

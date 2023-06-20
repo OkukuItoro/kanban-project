@@ -48,7 +48,7 @@ const NavBar = ({ sideBarState, handleSideBarState }) => {
         )}
 
         {/* Search Input */}
-        <form className="flex_row items-center rounded-[6px] bg-[#F5F5F5] h-[44px] w-[55%] lg:w-[417px] p-4">
+        <form className="hidden lg:flex lg:flex-row items-center rounded-[6px] bg-[#F5F5F5] h-[44px] w-[55%] lg:w-[417px] p-4">
           <Image
             src="/icons/search-normal.svg"
             width={22}

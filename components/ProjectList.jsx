@@ -10,7 +10,7 @@ const ProjectList = ({ stage, tasks }) => {
         <section
           ref={droppableProvided.innerRef}
           {...droppableProvided.droppableProps}
-          className="bg-[#F5F5F5] w-[100%] lg:w-[32%] flex_col rounded-[16px] mb-12 lg:m-0 p-5 h-[fit-content]"
+          className="bg-[#F5F5F5] w-[100%] md:w-[32%] flex_col rounded-[16px] mb-12 lg:m-0 p-5 h-[fit-content]"
         >
           {/* Container for Project's Stage Theme, Title and No. of items */}
           <section className="flex_row items-center gap-2 mb-5">
