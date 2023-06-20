@@ -1,12 +1,68 @@
 "use client";
 
 import Image from "next/image";
-import ProjectList from "@/components/ProjectList";
+import dynamic from "next/dynamic";
+const ProjectList = dynamic(() => import("@/components/ProjectList"), {
+  ssr: false,
+});
 import { useState } from "react";
-import { todos } from "@/constants";
+import { initData } from "@/constants";
+import { DragDropContext } from "react-beautiful-dnd";
+
+const reOrderStageList = (sourceStageList, startIndex, endIndex) => {
+  const newTaskIds = Array.from(sourceStageList.taskIds);
+  const [removed] = newTaskIds.splice(startIndex, 1);
+  newTaskIds.splice(endIndex, 0, removed);
+
+  const newStageList = {
+    ...sourceStageList,
+    taskIds: newTaskIds,
+  };
+  return newStageList;
+};
 
 export default function Home() {
-  const [data, setData] = useState(todos);
+  const [data, setData] = useState(initData);
+
+  const onDragEnd = (result) => {
+    const { destination, source } = result;
+
+    // Unkown Destination
+    if (!destination) return;
+
+    // User drags and drops back in same position
+    if (
+      destination.droppableId === source.droppableId &&
+      destination.index === source.index
+    ) {
+      return;
+    }
+
+    // user drops within the same column but in different position
+    const sourceStageList = data.stages[source.droppableId];
+    const destinationStageList = data.stages[destination.droppableId];
+
+    if (sourceStageList.id === destinationStageList.id) {
+      const newList = reOrderStageList(
+        sourceStageList,
+        source.index,
+        destination.index
+      );
+
+      const newDataState = {
+        ...data,
+        columns: {
+          ...data.stages,
+          [newList.id]: newList,
+        },
+      };
+      setData(newDataState);
+      return;
+    }
+
+    // user moves from one stage list to another
+  };
+
   // The Mobile App Page
   return (
     <section className="py-[6%] px-[45px] lg:p-[4.3%]">
@@ -141,9 +197,14 @@ export default function Home() {
       </section>
 
       <section className="flex_row flex-wrap gap-4">
-        <ProjectList name="To Do" data={data} />
-        <ProjectList name="On Progress" data={data} />
-        <ProjectList name="Done" data={data} />
+        <DragDropContext onDragEnd={onDragEnd}>
+          {data.stageOrder.map((stageId) => {
+            const stage = data.stages[stageId];
+            const tasks = stage.tasksIds.map((taskId) => data.tasks[taskId]);
+
+            return <ProjectList key={stage.id} stage={stage} tasks={tasks} />;
+          })}
+        </DragDropContext>
       </section>
     </section>
   );

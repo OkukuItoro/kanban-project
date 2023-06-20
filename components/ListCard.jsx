@@ -1,8 +1,8 @@
 import Image from "next/image";
 
-const ListCard = ({ todo }) => {
+const ListCard = ({ task }) => {
   const { urgency, status, title, desc, imgs, collaborators, comments, files } =
-    todo;
+    task;
   return (
     // CARD COMPONENT
     <article className="bg-white p-4 mt-6 rounded-[16px]">
